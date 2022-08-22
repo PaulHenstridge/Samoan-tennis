@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"
+        integrity="sha512-2rUSTSAeOO02jF6eBqENNqPs1EohenJ5j+1dgDPdXSLz9nOlrr8DJk4zW/lDy8rjhGCSonW3Gx812XJQIKZKJQ=="
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Samoan Tennis</title>
+</head>
+
+<body>
+    <div class="overlay">
+        <h1>SAMOAN TENNIS</h1>
+        <section class="begin-game-container">
+            <div class="start-container">
+                <input type="text" id="user-name" placeholder="enter name">
+                <button class="join-btn">PLAY</button>
+                <div class="waiting"></div>
+            </div>
+
+        </section>
+
+        <div class="icon-bg">
+            <i class="fa-solid fa-circle-info"></i>
+        </div>
+
+    </div>
+
+    <section class="game-info">
+        <div class="dice-display"></div>
+        <span class="clock"></span>
+    </section>
+
+    <div class="game-board">
+        <div class="area p1-yard">
+            <h2>Player 1</h2>
+        </div>
+        <div class="area town-square"></div>
+        <div class="area p2-yard">Player 2</div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
