@@ -1,3 +1,10 @@
+/*
+TODO NEXT - infobox is being lost because changing innerHTML.
+put a container into p1yard and inject tiles there so info can stay relative to yard.
+*/
+
+
+
 // Make connection
 const socket = io()
 
@@ -5,13 +12,15 @@ const overlay = document.querySelector('.overlay')
 const nameInput = document.querySelector('#user-name')
 const joinButton = document.querySelector('.join-btn')
 const waiting = document.querySelector('.waiting')
+const gameInfo = document.querySelector('i')
+const gameInfoPanel = document.querySelector('.game-info-panel')
 
 const clock = document.querySelector('.clock')
 const disp = document.querySelector('.dice-display')
 
 const areas = document.querySelectorAll('.area')
-const p2Yard = document.querySelector('.p2-yard')
-const p1Yard = document.querySelector('.p1-yard')
+const p2Yard = document.querySelector('.p2-tiles-container')
+const p1Yard = document.querySelector('.p1-tiles-container')
 const townSquare = document.querySelector('.town-square')
 
 
@@ -19,8 +28,14 @@ let playerName = ''
 let timerOn = false
 let dice
 
+let gameDuration = 10
+
 // TODO - names must be unique.  get back end to check names are different and send alert second player if so
 joinButton.addEventListener('click', handleJoinClick)
+
+gameInfo.addEventListener('click', () => {
+    gameInfoPanel.classList.toggle('hidden') // better to do a transition in from below or somthing, or toggle in from side??
+})
 
 socket.on('waiting', data => {
     waiting.innerText = `${data.opponent} is ready to play!`
@@ -57,7 +72,7 @@ socket.on('tileArrays', data => {
     }
 
     //start timer
-    if (!timerOn) timer(2)
+    if (!timerOn) timer(gameDuration)
 })
 
 socket.on('finalScore', data => {
@@ -160,13 +175,18 @@ const gameOverHTML = (data) => {
 }
 
 const beginHTML = `
-    <section class="begin-game-container">
-        <div class="start-container">
-            <input type="text" id="user-name" placeholder="enter name">
-            <button class="join-btn">PLAY</button>
-            <div class="waiting"></div>
-        </div>
-    </section>
+<h1>SAMOAN TENNIS</h1>
+<section class="begin-game-container">
+    <div class="start-container">
+        <input type="text" id="user-name" placeholder="enter name">
+        <button class="join-btn">PLAY</button>
+        <div class="waiting"></div>
+    </div>
+
+</section>
+
+<i class="fa-solid fa-circle-info"></i>
+
 `
 
 

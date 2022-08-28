@@ -1,3 +1,15 @@
+:root {
+    /* color scheme */
+
+    --clr-bg-dark: rgba(22, 87, 104, 1);
+    --clr-bg-accent: rgba(240, 248, 255, 0.07);
+    --clr-red: rgb(148, 18, 18);
+    --clr-blue: rgb(0, 0, 255);
+    --clr-highlight: rgb(240, 248, 255);
+    --clr-light: rgba(240, 248, 255, 0.806);
+}
+
+
 * {
     box-sizing: border-box;
     /* border: none; */
@@ -13,56 +25,53 @@
     left: -5%;
     border: 0.2rem solid black;
     margin: auto;
-    background-color: rgba(22, 87, 104, 1);
+    background-color: var(--clr-bg-dark);
     transition: opacity 0.5s linear;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    /* display: none; */
 }
 
 .overlay>h1 {
     font-size: 5rem;
     margin: 0 auto 0 auto;
-    color: rgb(148, 18, 18);
-    text-shadow: 1px 2px blue;
-    background-color: rgba(240, 248, 255, 0.07);
     width: min-content;
-    box-shadow: inset 2px 2px 15px 5px rgba(22, 87, 104, 1);
+    color: var(--clr-red);
+    text-shadow: 1px 2px var(--clr-blue);
+    background-color: var(--clr-bg-accent);
+    box-shadow: inset 2px 2px 15px 5px var(--clr-bg-dark);
     padding: 1rem;
+    border-radius: 10%;
+
 }
 
 
-/* .icon-bg {
-    position: relative;
-    margin-bottom: 10vh;
-    transform: translateY(-8vh);
-    z-index: 1;
-    width: 8rem;
-    height: 8rem;
-    background-color: rgba(240, 248, 255, 0.07);
-    box-shadow: inset 2px 2px 15px 5px rgba(22, 87, 104, 1);
-    border-radius: 50%;
-} */
-
 i {
-    margin: auto;
     font-size: 3rem;
     transform: translateY(-8vh);
 }
 
+i:hover {
+    color: gold;
+}
 
 .begin-game-container {
-    background-color: rgba(240, 248, 255, 0.07);
-    box-shadow: inset 2px 2px 15px 5px rgba(22, 87, 104, 1);
+    background-color: var(--clr-bg-accent);
+    box-shadow: inset 2px 2px 15px 5px var(--clr-bg-dark);
     padding: 2.5rem;
+    transform: translateY(-8vh);
+    border-radius: 10%;
+
 }
 
 .start-container>input,
 .start-container>button {
     border: none;
     padding: 0.5rem;
+    background-color: var(--clr-highlight);
 }
 
 .start-container>input:hover,
@@ -79,13 +88,14 @@ i {
 
 
 .scores-container {
-    border: 3px solid black;
     text-align: center;
-    padding: 2rem;
-    background-color: rgba(240, 248, 255, 0.806);
+    background-color: var(--clr-bg-accent);
+    box-shadow: inset 2px 2px 15px 5px var(--clr-bg-dark);
+    padding: 4rem;
+    border-radius: 10%;
 }
 
-
+/* each section of tile (injected form JS) */
 p>span {
     color: rgb(236, 238, 252);
     padding: 5px;
@@ -95,7 +105,7 @@ p>span {
 }
 
 body {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--clr-bg-dark);
 }
 
 .game-info {
@@ -118,21 +128,71 @@ body {
 .area {
     width: 80vw;
     height: 40vh;
-    border: 2px solid slateblue;
-    border-radius: 3%;
-    background-color: rgb(236, 238, 252);
+    border-radius: 5%;
+    background-color: var(--clr-light);
     margin-bottom: 2vh;
+
+    /* box-shadow: inset 2px 2px 15px 5px var(--clr-bg-dark);
+    box-shadow: 2px 2px 15px 5px var(--clr-bg-dark); */
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
-.p1-yard,
-.p2-yard {
+.p1-tiles-container,
+.p2-tiles-container {
     width: 50vw;
     height: 20vh;
+    position: relative;
 }
+
+.p1-yard {
+    transform: translateX(15vw);
+    /* border: 4px solid var(--clr-blue); */
+}
+
+.p2-yard {
+    transform: translateX(-15vw);
+    /* border: 4px solid var(--clr-red); */
+}
+
+.p1-infobox {
+    left: -30vw;
+    justify-content: flex-end;
+}
+
+.p2-infobox {
+    right: -30vw;
+}
+
+.p1-infobox,
+.p2-infobox {
+    position: absolute;
+    top: 0;
+    width: 26vw;
+    height: 20vh;
+    text-align: center;
+    background-color: var(--clr-bg-accent);
+    box-shadow: inset 2px 2px 15px 5px var(--clr-bg-dark);
+    padding: 1rem;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.p1-infobox>h2,
+.p2-infobox>h2 {
+    color: var(--clr-red);
+    text-shadow: 1px 1px var(--clr-blue);
+}
+
+.town-square {
+    /* outline: 4px solid var(--clr-red); */
+    /* border: 4px solid var(--clr-blue); */
+}
+
 
 .tile {
     display: flex;

@@ -32,10 +32,8 @@
 
         </section>
 
-        <div class="icon-bg">
-            <i class="fa-solid fa-circle-info"></i>
-        </div>
-
+        <i class="fa-solid fa-circle-info"></i>
+        <div class="game-info-panel hidden">This is a game about stuff and that...</div>
     </div>
 
     <section class="game-info">
@@ -44,11 +42,23 @@
     </section>
 
     <div class="game-board">
-        <div class="area p1-yard">
-            <h2>Player 1</h2>
+
+        <div class="p1-yard">
+            <div class="p1-infobox">
+                <h2>PLAYER 1</h2>
+            </div>
+            <div class="area p1-tiles-container"></div>
         </div>
+
         <div class="area town-square"></div>
-        <div class="area p2-yard">Player 2</div>
+
+        <div class="p2-yard">
+            <div class="p2-infobox">
+                <h2>PLAYER 2</h2>
+            </div>
+            <div class="area p2-tiles-container"></div>
+        </div>
+
     </div>
 
     <script src="app.js"></script>
