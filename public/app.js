@@ -1,10 +1,3 @@
-/*
-TODO NEXT - infobox is being lost because changing innerHTML.
-put a container into p1yard and inject tiles there so info can stay relative to yard.
-*/
-
-
-
 // Make connection
 const socket = io()
 
@@ -27,8 +20,9 @@ const townSquare = document.querySelector('.town-square')
 let playerName = ''
 let timerOn = false
 let dice
+let tileStyle = 'photos'
 
-let gameDuration = 10
+let gameDuration = 130
 
 // TODO - names must be unique.  get back end to check names are different and send alert second player if so
 joinButton.addEventListener('click', handleJoinClick)
@@ -46,14 +40,16 @@ socket.on('tileArrays', data => {
     overlay.classList.add('hidden')
     dice = data.currentRoll
     for (let area of areas) area.innerHTML = ''
-    makeTiles(data.townSquareArray, townSquare)
-    makeTiles(data.p2YardArray, p2Yard)
-    makeTiles(data.p1YardArray, p1Yard)
+    makeTiles(data.townSquareArray, townSquare, tileStyle)
+    makeTiles(data.p2YardArray, p2Yard, tileStyle)
+    makeTiles(data.p1YardArray, p1Yard, tileStyle)
 
     // display dice roll  TODO - make dice more prominant
     disp.innerHTML = `
-    <p><span>${dice[0]}</span><span>${dice[1]}</span> 
+    <span>${dice[0]}</span><span>${dice[1]}</span> 
     `
+    disp.children[0].classList.add(`${tileStyle}-${dice[0]}`)
+    disp.children[1].classList.add(`${tileStyle}-${dice[1]}`)
 
     let allTiles = document.querySelectorAll('.tile')
     for (let tile of allTiles) {
@@ -113,8 +109,17 @@ function shuffle(array) { // Fisher-Yates shuffle
     }
     return array
 }
+/*
+to choose tile styles - 
+    option on overlay for first player to select (add a default if no selection)
+    eg nums, colors, images
 
-function makeTiles(array, area) {
+            whatever type is chosen is passed  into makeTiles() as 3rd arg.  this is concatinated with its tileNum set as a class
+            eg colors-3
+
+            .colors-3 sets background color in css
+*/
+function makeTiles(array, area, tileStyle) {
 
     for (let tileNums of array) {
         let tile = document.createElement('div')
@@ -124,6 +129,10 @@ function makeTiles(array, area) {
             <div class="tileSection">${tileNums[0]}</div>
             <div class="tileSection">${tileNums[1]}</div>
         `
+        // add classes for tile styling
+        tile.children[0].classList.add(`${tileStyle}-${tileNums[0]}`)
+        tile.children[1].classList.add(`${tileStyle}-${tileNums[1]}`)
+        console.dir(tile)
         area.appendChild(tile)
     }
 

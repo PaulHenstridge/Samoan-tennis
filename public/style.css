@@ -14,6 +14,10 @@
     box-sizing: border-box;
     /* border: none; */
     margin: none;
+    /* font-family: 'Righteous', cursive; */
+    /* font-family: 'Bree Serif', serif; */
+    /* font-family: 'Alegreya', serif; */
+    font-family: 'Yeseva One', cursive;
 }
 
 .overlay {
@@ -45,9 +49,7 @@
     box-shadow: inset 2px 2px 15px 5px var(--clr-bg-dark);
     padding: 1rem;
     border-radius: 10%;
-
 }
-
 
 i {
     font-size: 3rem;
@@ -96,11 +98,11 @@ i:hover {
 }
 
 /* each section of tile (injected form JS) */
-p>span {
-    color: rgb(236, 238, 252);
-    padding: 5px;
-    margin: 4px;
-    border: 2px solid slateblue;
+.dice-display>span {
+    /* color: rgb(236, 238, 252); */
+    padding: 18px;
+    /* margin: 4px; */
+    border: 2px solid black;
     font-size: 2rem;
 }
 
@@ -111,6 +113,7 @@ body {
 .game-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .clock {
@@ -200,15 +203,95 @@ body {
     width: max-content;
     height: max-content;
     margin: 1%;
+    background-color: black;
     /* padding: 1%; */
 
 }
 
 .tileSection {
-    padding: 3px;
-    border: 1px solid blue;
+    padding: 18px;
+    /* border: 1px solid blue; */
     margin: 2px;
 }
+
+/* ~~~~~~~~~~~~ TILE STYLES ~~~~~~~~~~~~~~~~~~~~ */
+
+/* colors */
+
+.colors-1 {
+    background-color: red;
+    color: red;
+}
+
+.colors-2 {
+    background-color: blue;
+    color: blue;
+}
+
+.colors-3 {
+    background-color: green;
+    color: green
+}
+
+.colors-4 {
+    background-color: orange;
+    color: orange;
+}
+
+.colors-5 {
+    background-color: purple;
+    color: purple;
+}
+
+.colors-6 {
+    background-color: hotpink;
+    color: hotpink;
+}
+
+/* photos */
+
+.photos-1 {
+    background-image: url('images/aurora-1197753_640.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+.photos-2 {
+    background-image: url('images/dolphin-203875_640.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+.photos-3 {
+    background-image: url('images/forest-1072828_640.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+.photos-4 {
+    background-image: url('images/hd-wallpaper-3251607_640.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+.photos-5 {
+    background-image: url('images/sunset-1651426_640.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+.photos-6 {
+    background-image: url('images/wolves-1341881_640.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
 
 .hidden {
     display: none;
