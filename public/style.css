@@ -191,10 +191,6 @@ body {
     text-shadow: 1px 1px var(--clr-blue);
 }
 
-.town-square {
-    /* outline: 4px solid var(--clr-red); */
-    /* border: 4px solid var(--clr-blue); */
-}
 
 
 .tile {
@@ -250,48 +246,91 @@ body {
 
 /* photos */
 
-.photos-1 {
+.images-1 {
     background-image: url('images/aurora-1197753_640.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: transparent;
 }
 
-.photos-2 {
+.images-2 {
     background-image: url('images/dolphin-203875_640.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: transparent;
 }
 
-.photos-3 {
+.images-3 {
     background-image: url('images/forest-1072828_640.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: transparent;
 }
 
-.photos-4 {
+.images-4 {
     background-image: url('images/hd-wallpaper-3251607_640.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: transparent;
 }
 
-.photos-5 {
+.images-5 {
     background-image: url('images/sunset-1651426_640.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: transparent;
 }
 
-.photos-6 {
+.images-6 {
     background-image: url('images/wolves-1341881_640.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: transparent;
 }
 
+/* icons */
+
+.symbols-1 {
+    background-image: url('images/scale-balanced-solid.svg');
+    /* background-size: cover;*/
+    background-repeat: no-repeat;
+    /* color: transparent; */
+}
+
+.symbols-2 {
+    background-image: url('images/worm-solid.svg');
+    /* background-size: cover;*/
+    background-repeat: no-repeat;
+    /* color: transparent; */
+}
+
+.symbols-3 {
+    background-image: url('images/skull-crossbones-solid.svg');
+    /* background-size: cover;*/
+    background-repeat: no-repeat;
+    /* color: transparent; */
+}
+
+.symbols-4 {
+    background-image: url('images/radio-solid.svg');
+    /* background-size: cover;*/
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+.symbols-5 {
+    background-image: url('images/anchor-solid.svg');
+    /* background-size: cover;*/
+    background-repeat: no-repeat;
+    color: transparent;
+}
+
+.symbols-6 {
+    background-image: url('images/flag-solid.svg');
+    /* background-size: cover;*/
+    background-repeat: no-repeat;
+    color: transparent;
+}
 
 .hidden {
     display: none;

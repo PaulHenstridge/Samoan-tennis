@@ -5,6 +5,9 @@ const overlay = document.querySelector('.overlay')
 const nameInput = document.querySelector('#user-name')
 const joinButton = document.querySelector('.join-btn')
 const waiting = document.querySelector('.waiting')
+
+const tileSelection = document.querySelectorAll('.tile-selection > button')
+
 const gameInfo = document.querySelector('i')
 const gameInfoPanel = document.querySelector('.game-info-panel')
 
@@ -20,9 +23,16 @@ const townSquare = document.querySelector('.town-square')
 let playerName = ''
 let timerOn = false
 let dice
-let tileStyle = 'photos'
+let tileStyle = 'images'
 
 let gameDuration = 130
+
+for (let selection of tileSelection) {
+    selection.addEventListener('click', () => {
+        console.log(selection.id)
+        tileStyle = selection.id
+    })
+}
 
 // TODO - names must be unique.  get back end to check names are different and send alert second player if so
 joinButton.addEventListener('click', handleJoinClick)
